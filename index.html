@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="chatbot.css" />
     <link rel="stylesheet" href="visual-editor.css" />
     <script type="application/ld+json">
       {
@@ -349,7 +350,56 @@
       </nav>
     </footer>
 
+    <aside class="chatbot-shell" aria-label="AI Concierge">
+      <button class="chat-launcher" id="chat-launcher" type="button" aria-controls="chat-widget" aria-expanded="false">
+        <span class="chat-launcher-icon" aria-hidden="true">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+            <path d="M8 9h8"></path>
+            <path d="M8 13h5"></path>
+          </svg>
+        </span>
+        <span class="chat-launcher-copy">
+          <strong>AI Concierge</strong>
+          <small>Ask about weddings, fleet, airports</small>
+        </span>
+      </button>
+
+      <section class="chat-widget closed" id="chat-widget" role="dialog" aria-modal="false" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <div>
+            <p class="chat-kicker">I Do Transportation</p>
+            <h2 id="chat-title">AI Concierge</h2>
+            <span>Online for quick planning questions</span>
+          </div>
+          <button class="chat-close" type="button" aria-label="Close AI Concierge">Close</button>
+        </header>
+
+        <div class="status-toast" id="webhook-toast" role="status" aria-live="polite">Demo lead captured for handoff.</div>
+
+        <div class="chat-messages" id="messages" aria-live="polite">
+          <div class="msg bot">
+            <p>Welcome to I Do Transportation. I can help with wedding shuttles, airport arrivals, fleet questions, and quote handoff.</p>
+            <div class="bot-question">What kind of event are we planning for today?</div>
+          </div>
+        </div>
+
+        <div class="quick-replies" id="quick-replies" aria-label="Suggested questions">
+          <button class="quick-reply" type="button" data-chat-reply="Get a Quote">Get a Quote</button>
+          <button class="quick-reply" type="button" data-chat-reply="What vehicles do you have?">Fleet Details</button>
+          <button class="quick-reply" type="button" data-chat-reply="Do you go to IAH?">Airport Transfers</button>
+        </div>
+
+        <form class="chat-input" id="chat-form">
+          <label class="sr-only" for="userInput">Message the AI Concierge</label>
+          <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </aside>
+
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
     <script src="visual-editor.js"></script>
   </body>
 </html>

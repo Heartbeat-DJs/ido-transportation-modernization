@@ -1,464 +1,505 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>I Do Transportation | Website Modernization Proposal</title>
-    <meta
-      name="description"
-      content="Client-facing proposal for the I Do Transportation website redesign, admin workflow, AI concierge direction, and next-step questionnaire."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Do Transportation | Digital Overhaul Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --ink: #11130f;
-        --deep: #0a0b09;
-        --ivory: #f4efe5;
-        --paper: #fffaf1;
-        --champagne: #b79b7d;
-        --sage: #8f997d;
-        --line: rgba(17, 19, 15, 0.14);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background:
-          linear-gradient(135deg, rgba(17, 19, 15, 0.03) 0 1px, transparent 1px 18px) 0 0 / 26px 26px,
-          linear-gradient(45deg, rgba(255, 250, 241, 0.38) 0 1px, transparent 1px 18px) 0 0 / 30px 30px,
-          linear-gradient(var(--ivory), #dfd2bf);
-        color: var(--ink);
-        font-family: "Manrope", Arial, sans-serif;
-        line-height: 1.62;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .proposal {
-        width: min(1120px, calc(100% - 36px));
-        margin: 0 auto;
-        padding: 48px 0 72px;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: 48px;
-        align-items: end;
-        min-height: 620px;
-        padding: 54px;
-        border-radius: 10px;
-        background:
-          linear-gradient(90deg, rgba(10, 11, 9, 0.94), rgba(10, 11, 9, 0.58)),
-          url("../assets/img/venue-olde-dobbin.jpg") center / cover;
-        color: var(--paper);
-        box-shadow: 0 34px 90px rgba(17, 19, 15, 0.28);
-      }
-
-      .hero img {
-        width: 250px;
-        max-width: 100%;
-        margin-bottom: 46px;
-      }
-
-      .eyebrow,
-      .kicker {
-        margin: 0 0 14px;
-        color: var(--champagne);
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin-top: 0;
-        font-family: "Playfair Display", Georgia, serif;
-        line-height: 0.98;
-      }
-
-      h1 {
-        max-width: 720px;
-        margin-bottom: 22px;
-        font-size: clamp(3.2rem, 7vw, 6.4rem);
-      }
-
-      h2 {
-        margin-bottom: 18px;
-        font-size: clamp(2.25rem, 4.8vw, 4.35rem);
-      }
-
-      h3 {
-        margin-bottom: 12px;
-        font-size: 1.45rem;
-      }
-
-      .hero p:not(.eyebrow) {
-        max-width: 660px;
-        margin-bottom: 0;
-        color: rgba(255, 250, 241, 0.82);
-        font-size: 1.08rem;
-      }
-
-      .status-card {
-        padding: 26px;
-        border: 1px solid rgba(255, 250, 241, 0.2);
-        border-radius: 8px;
-        background: rgba(10, 11, 9, 0.62);
-        backdrop-filter: blur(18px);
-      }
-
-      .status-card strong {
-        display: block;
-        color: var(--champagne);
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 4rem;
-        line-height: 0.9;
-      }
-
-      .status-card span {
-        display: block;
-        margin-bottom: 18px;
-        font-size: 0.78rem;
-        font-weight: 800;
-        text-transform: uppercase;
-      }
-
-      .link-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 28px;
-      }
-
-      .button {
-        display: inline-flex;
-        min-height: 48px;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid transparent;
-        border-radius: 999px;
-        padding: 12px 18px;
-        background: var(--champagne);
-        color: var(--ink);
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .button.secondary {
-        border-color: rgba(255, 250, 241, 0.32);
-        background: rgba(255, 250, 241, 0.08);
-        color: var(--paper);
-      }
-
-      .section {
-        display: grid;
-        grid-template-columns: 0.78fr 1.22fr;
-        gap: 54px;
-        padding: 84px 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .section.full {
-        display: block;
-      }
-
-      .panel-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .panel,
-      .questionnaire {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgba(255, 250, 241, 0.54);
-        box-shadow: 0 18px 48px rgba(17, 19, 15, 0.08);
-      }
-
-      .panel {
-        padding: 24px;
-      }
-
-      .panel span {
-        display: block;
-        margin-bottom: 18px;
-        color: var(--champagne);
-        font-weight: 900;
-      }
-
-      .dark-band {
-        margin: 46px 0 0;
-        padding: 40px;
-        border-radius: 10px;
-        background: linear-gradient(135deg, var(--deep), #20271c);
-        color: var(--paper);
-      }
-
-      .dark-band p {
-        color: rgba(255, 250, 241, 0.76);
-      }
-
-      ul,
-      ol {
-        padding-left: 20px;
-      }
-
-      li {
-        margin-bottom: 10px;
-      }
-
-      .questionnaire {
-        padding: 30px;
-      }
-
-      .questionnaire ol {
-        columns: 2;
-        column-gap: 44px;
-      }
-
-      .fine-print {
-        margin-top: 26px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-        color: rgba(17, 19, 15, 0.68);
-        font-size: 0.94rem;
-      }
-
-      .footer-note {
-        padding: 42px 0 0;
-        color: rgba(17, 19, 15, 0.7);
-      }
-
-      @media (max-width: 860px) {
-        .hero,
-        .section {
-          grid-template-columns: 1fr;
+        :root {
+            /* Cinematic Dark Mode Palette */
+            --bg-deep: #0B0E14;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --accent-gold: #D4AF37;
+            --accent-gold-glow: rgba(212, 175, 55, 0.4);
+            --accent-dark: #1A1F2B;
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
         }
 
-        .hero {
-          min-height: auto;
-          padding: 34px 24px;
-        }
-
-        .panel-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .questionnaire ol {
-          columns: 1;
-        }
-      }
-
-      @media print {
         body {
-          background: #fff;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top center, #151A22 0%, var(--bg-deep) 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
-        .proposal {
-          width: 100%;
-          padding: 0;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
-        .hero,
-        .section,
-        .dark-band,
-        .panel,
-        .questionnaire {
-          break-inside: avoid;
-          box-shadow: none;
+        /* Hero */
+        header {
+            text-align: center;
+            margin-bottom: 70px;
+            animation: fadeInDown 1s ease-out;
         }
 
-        .button {
-          border: 1px solid var(--line);
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-      }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            display: inline-block;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 4px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin: 0 0 20px 0;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Sections */
+        .section {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        /* Grid for Comparison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .comparison-card {
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            background: rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .comparison-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-red { color: #EF4444; }
+        .icon-green { color: #10B981; }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .review-card {
+            background: rgba(0,0,0,0.22);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .review-card strong {
+            display: block;
+            color: #FFFFFF;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .review-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .prototype-note {
+            margin-top: 18px;
+            padding: 18px 20px;
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.05);
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Accordions */
+        details {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        details[open] {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 500;
+            color: #FFFFFF;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        summary:hover {
+            color: var(--accent-gold);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .details-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .details-content strong {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* Investment Block */
+        .investment-block {
+            background: linear-gradient(145deg, #1A1F2B, #0F131A);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: white;
+            text-align: center;
+            padding: 60px;
+            border-radius: 16px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .investment-block::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; left: 0; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 20px 0 10px 0;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .price-sub {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .guarantee-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .guarantee-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        /* Buttons */
+        .btn-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bg-card);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-soft);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.2);
+            background: var(--bg-card-hover);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #B89626 100%);
+            color: #000000;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 20px var(--accent-gold-glow);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #E6C24A 0%, #C4A133 100%);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+            color: #000000;
+        }
+
+        /* Syntax Highlighting overrides for dark mode */
+        code {
+            background: rgba(255,255,255,0.1) !important;
+            color: var(--accent-gold) !important;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.5rem; }
+            .price { font-size: 3.5rem; }
+            .container { padding: 40px 20px; }
+        }
     </style>
-  </head>
-  <body>
-    <main class="proposal">
-      <section class="hero">
-        <div>
-          <img src="../assets/img/ido-logo-new-white.png" alt="I Do Transportation Services" />
-          <p class="eyebrow">Website modernization proposal for Chase</p>
-          <h1>A cinematic wedding transportation experience.</h1>
-          <p>
-            This proposal outlines the mockup, admin workflow, AI concierge direction, and next steps
-            for turning I Do Transportation into a modern, easier-to-manage digital presence.
-          </p>
-          <div class="link-row">
-            <a class="button" href="https://heartbeat-djs.github.io/ido-transportation-modernization/">View website</a>
-            <a class="button secondary" href="client-briefing-chase.pdf">Download link sheet</a>
-          </div>
-        </div>
-        <aside class="status-card">
-          <strong>70%</strong>
-          <span>Mockup maturity</span>
-          <p>
-            The direction, visual system, and core page structure are in place. The remaining work is
-            final copy, final photos, backend hardening, client decisions, and production launch setup.
-          </p>
-        </aside>
-      </section>
+</head>
+<body>
 
-      <section class="section">
-        <div>
-          <p class="kicker">What we focused on</p>
-          <h2>Modern, wedding-first, and built around trust.</h2>
-        </div>
-        <div>
-          <p>
-            The redesign moves away from a basic transportation page and into a refined wedding
-            concierge experience. The site now leads with cinematic venue imagery, elegant typography,
-            clearer packages, local venue familiarity, and a stronger sense of calm planning.
-          </p>
-          <div class="panel-grid">
-            <article class="panel">
-              <span>01</span>
-              <h3>Wedding feel</h3>
-              <p>Language, images, and layout now make wedding weekends the first impression.</p>
-            </article>
-            <article class="panel">
-              <span>02</span>
-              <h3>Clear decisions</h3>
-              <p>Packages are framed around real client needs: wedding weekends, arrivals, and nights out.</p>
-            </article>
-            <article class="panel">
-              <span>03</span>
-              <h3>Premium polish</h3>
-              <p>Color, motion, spacing, and photo treatment are designed to feel current and high-end.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <header>
+            <div class="logo">SANO Solutions Proposal</div>
+            <h1>Chase, welcome to the new era of<br><span style="color: var(--accent-gold);">I Do Transportation.</span></h1>
+            <p class="subtitle">A high-effort website mockup and Phase 1 AI Concierge direction designed to make I Do Transportation feel premium, easier to manage, and easier for qualified couples to trust.</p>
+        </header>
 
-      <section class="section">
-        <div>
-          <p class="kicker">Admin command center</p>
-          <h2>Less waiting on a webpage provider.</h2>
+        <!-- The Audit -->
+        <div class="section">
+            <h2 class="section-title">The Current Problem</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; font-weight: 300;">Right now, the website does not fully communicate the quality of the service. From a customer's perspective, vague transportation pages create anxiety: couples want to know the company is organized, responsive, wedding-aware, and easy to work with before they ever call.</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3><span class="icon-red">&times;</span> The Old System</h3>
+                    <ul style="color: var(--text-muted); padding-left: 20px; font-weight: 300;">
+                        <li style="margin-bottom:10px;">The service mix is not framed clearly enough for weddings.</li>
+                        <li style="margin-bottom:10px;">Hard to navigate on mobile devices.</li>
+                        <li style="margin-bottom:10px;">Small updates depend too much on a webpage provider.</li>
+                        <li>No guided 24/7 lead capture experience.</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3><span class="icon-green">&#10003;</span> The SANO Solution</h3>
+                    <ul style="color: var(--text-muted); padding-left: 20px; font-weight: 300;">
+                        <li style="margin-bottom:10px;">Clear package positioning to filter better leads.</li>
+                        <li style="margin-bottom:10px;">Cinematic, mobile-first design builds trust.</li>
+                        <li style="margin-bottom:10px;">Admin tools that reduce dependence on outside edits.</li>
+                        <li>An AI Concierge that answers FAQs, deflects pricing responsibly, and captures quote leads.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-          <p>
-            The admin side is designed to give I Do Transportation more control over the site without
-            waiting on a third party for every text or photo change. The demo includes a secure login,
-            editable content fields, media controls, and a visual editor path for direct on-page changes.
-          </p>
-          <ul>
-            <li>Update key homepage copy and brand colors.</li>
-            <li>Swap hero, package, and fleet images.</li>
-            <li>Preview the site through the admin dashboard.</li>
-            <li>Use a floating visual editor for direct page-level edits.</li>
-          </ul>
-          <div class="dark-band">
-            <h3>Important demo note</h3>
-            <p>
-              The admin workflow is a functional prototype connected to a local demo backend for review.
-              Production would include final hosting, role/password hardening, backups, deployment rules,
-              analytics, and a safer content publishing workflow.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <section class="section">
-        <div>
-          <p class="kicker">AI concierge direction</p>
-          <h2>Helpful first response, not overpromised automation.</h2>
+        <!-- The Demo Link -->
+        <div class="btn-container" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+            <p style="color: var(--text-muted); margin-bottom: 5px; font-style: italic; font-weight: 300;">We already built the prototype. Test both the customer experience and the admin backend below.</p>
+            <a href="https://heartbeat-djs.github.io/ido-transportation-modernization/" target="_blank" class="btn btn-gold" style="width: 100%; max-width: 350px;">View Live Customer Website</a>
+            <a href="https://searched-goals-left-forum.trycloudflare.com/preview/" target="_blank" class="btn" style="width: 100%; max-width: 350px;">View Admin-Connected Preview</a>
+            <a href="https://searched-goals-left-forum.trycloudflare.com/admin/login.html" target="_blank" class="btn" style="width: 100%; max-width: 350px;">Test Out The Admin Side</a>
+            <a href="https://heartbeat-djs.github.io/ido-transportation-modernization/proposal/client-briefing-chase.pdf" target="_blank" class="btn" style="width: 100%; max-width: 350px;">Download One-Page Link Sheet</a>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-soft); padding: 15px 25px; border-radius: 8px; margin-top: 5px; font-size: 0.95rem; color: var(--text-muted); text-align: center;">
+                <strong style="color: #FFFFFF; font-weight: 500;">Admin Login Credentials</strong><br>
+                Username: <code style="padding: 2px 6px; border-radius: 4px; font-weight: 600;">admin</code><br>
+                Password: <code style="padding: 2px 6px; border-radius: 4px; font-weight: 600;">password123</code>
+            </div>
         </div>
-        <div>
-          <p>
-            The AI chatbot direction is focused on practical support: answering common questions,
-            qualifying quote requests, deflecting pricing until the route is understood, and preparing
-            a clean handoff for the human team. More advanced voice receptionists and text-back systems
-            can be treated as future Phase 2 upgrades.
-          </p>
-          <ul>
-            <li>FAQ and quote-start assistant for wedding and event transportation.</li>
-            <li>Phone-number capture for fast follow-up.</li>
-            <li>Pricing deflection so the business keeps control of custom quotes.</li>
-            <li>Future-ready structure for SMS or Make.com style workflow handoff.</li>
-          </ul>
-        </div>
-      </section>
 
-      <section class="section full">
-        <p class="kicker">Next step questionnaire</p>
-        <h2>If you want to move forward.</h2>
-        <div class="questionnaire">
-          <p>
-            To begin the full build, we would collect a 50% deposit and then use this questionnaire
-            to finish the site around your exact preferences, packages, policies, photos, and launch goals.
-          </p>
-          <ol>
-            <li>What are the top three services you want visitors to book?</li>
-            <li>Which wedding venues should be featured first?</li>
-            <li>What are your exact service areas and airport coverage?</li>
-            <li>What vehicle types, capacities, and amenities should be listed?</li>
-            <li>Which photos are final, and which should be replaced or upgraded?</li>
-            <li>What tone should the copy use: luxury, friendly, family-owned, or direct?</li>
-            <li>What phone number and email should receive leads?</li>
-            <li>Do you want form submissions, texts, emails, or all three?</li>
-            <li>Which current website problems are most frustrating?</li>
-            <li>Who should have admin access after launch?</li>
-            <li>Do you want the chatbot included in Phase 1 or saved for Phase 2?</li>
-            <li>What launch timeline feels realistic?</li>
-          </ol>
-          <p class="fine-print">
-            This is a complete mockup and working demo direction, not the finished production website.
-            It is intentionally still in your hands. We can keep the current direction, simplify it,
-            make it more formal, make it more family-owned, or take it in another direction before launch.
-          </p>
+        <div class="section">
+            <h2 class="section-title">What You Are Reviewing</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <strong>Website Redesign</strong>
+                    <p>A wedding-forward, cinematic front end built around venue arrivals, guest shuttles, private events, airport weekends, and a more premium first impression.</p>
+                </div>
+                <div class="review-card">
+                    <strong>Admin Command Center</strong>
+                    <p>A working admin direction that gives I Do Transportation more control over text, imagery, and updates without waiting on a provider for every small change.</p>
+                </div>
+                <div class="review-card">
+                    <strong>AI Concierge</strong>
+                    <p>A Phase 1 chatbot experience for FAQs, fleet questions, airport transfer questions, and quote handoff. Pricing is intentionally handled by the human team.</p>
+                </div>
+                <div class="review-card">
+                    <strong>Next-Step Questionnaire</strong>
+                    <p>If the direction feels right, the questionnaire gathers final services, photos, routes, policies, pricing rules, and operational preferences before production.</p>
+                </div>
+            </div>
+            <div class="prototype-note">
+                This is a strong working mockup, not the final locked website. It is roughly 70% of the way there: polished enough to show the direction, flexible enough for you to steer before launch.
+            </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div>
-          <p class="kicker">Share links</p>
-          <h2>Review the experience.</h2>
-        </div>
-        <div>
-          <ul>
-            <li>
-              Public website mockup:
-              <a href="https://heartbeat-djs.github.io/ido-transportation-modernization/">heartbeat-djs.github.io/ido-transportation-modernization</a>
-            </li>
-            <li>
-              Temporary full-stack preview:
-              <a href="https://searched-goals-left-forum.trycloudflare.com/preview/">searched-goals-left-forum.trycloudflare.com/preview</a>
-            </li>
-            <li>
-              Temporary admin login:
-              <a href="https://searched-goals-left-forum.trycloudflare.com/admin/login.html">searched-goals-left-forum.trycloudflare.com/admin/login.html</a>
-            </li>
-            <li>
-              Client link sheet:
-              <a href="client-briefing-chase.pdf">Download the one-page PDF</a>
-            </li>
-          </ul>
-          <p class="fine-print">
-            Temporary demo links depend on the local demo server and tunnel being online. Permanent
-            production links would be created during the final hosting and launch phase.
-          </p>
-        </div>
-      </section>
+        <!-- The Deep Dive Accordions -->
+        <div class="section">
+            <h2 class="section-title">The Technology (Deep Dive)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-weight: 300;">Click the sections below to see exactly how this system is engineered to generate revenue.</p>
 
-      <p class="footer-note">
-        Prepared for Chase and I Do Transportation. Built as a high-effort prototype to show the
-        design direction, operating model, and client-control workflow before committing to the final build.
-      </p>
-    </main>
-  </body>
+            <details>
+                <summary>1. Custom Website & Admin Editor</summary>
+                <div class="details-content">
+                    Your new website is custom-coded, mobile-first, and built around the wedding transportation journey. Unlike a static page that requires outside help for every change, it includes a private <strong>Admin Command Center</strong> direction so common content and image updates can be handled with more ownership.
+                </div>
+            </details>
+
+            <details>
+                <summary>2. The AI Chatbot Concierge</summary>
+                <div class="details-content">
+                    A 24/7 digital assistant embedded directly into the site. It answers common questions about weddings, fleet capacity, airports, and event logistics, then hands quote requests to the human team. It <strong>does not publish pricing in chat</strong>; it deflects pricing questions into a quote/text flow so the lead stays qualified and personal.
+                </div>
+            </details>
+
+            <details>
+                <summary>3. Phase 2: Future Automation Upsells</summary>
+                <div class="details-content">
+                    The first focus is the custom website, admin control, and AI FAQ/lead handoff. Once that foundation is working, future Phase 2 options could include an <strong>AI Voice Receptionist</strong> and <strong>Automatic Missed-Call Text Backs</strong>. Those are future upgrades, not required for the initial launch.
+                </div>
+            </details>
+        </div>
+
+        <!-- The Investment -->
+        <div class="investment-block">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 0; font-weight: 400; color: #FFFFFF;">The Investment</h2>
+            <div class="price">$2,500</div>
+            <div class="price-sub">One-Time Cash Payment</div>
+            
+            <ul class="guarantee-list">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>The Website & Chatbot are 100% Yours.</span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>ZERO</strong> ongoing monthly SaaS payments.</span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>FREE</strong> bug-fixes for the first 3 months.</span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Premium Mobile & Desktop Optimization.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="section" style="text-align: center; padding: 60px 40px; border-color: rgba(212, 175, 55, 0.3); background: rgba(212, 175, 55, 0.02);">
+            <h2 class="section-title" style="border: none; margin-bottom: 10px;">Ready to Start?</h2>
+            <p style="color: var(--text-muted); max-width: 560px; margin: 0 auto 30px auto; font-weight: 300;">If you want to move forward, the next step is the 50% down payment and the optimization questionnaire. From there, we replace mockup details with final business details, photos, services, route rules, and launch preferences.</p>
+            <a href="https://sano-onboarding.pages.dev" target="_blank" class="btn btn-gold">Begin Optimization Audit</a>
+        </div>
+
+    </div>
+
+</body>
 </html>
