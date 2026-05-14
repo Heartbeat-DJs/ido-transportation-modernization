@@ -151,9 +151,10 @@ h3 {
 }
 
 .site-header.is-scrolled .wordmark {
-  width: clamp(58px, 4.8vw, 76px);
-  aspect-ratio: 2.75;
-  margin-top: -14px;
+  width: clamp(132px, 10.4vw, 158px);
+  height: 56px;
+  aspect-ratio: auto;
+  margin-top: 0;
   border: 1px solid rgba(255, 250, 241, 0.18);
   border-radius: 999px;
   background: rgba(15, 16, 13, 0.7);
@@ -195,6 +196,12 @@ h3 {
 .wordmark .logo-mark {
   opacity: 0;
   transform: scale(0.92);
+}
+
+.site-header.is-scrolled .wordmark img {
+  inset: 7px 13px;
+  width: calc(100% - 26px);
+  height: calc(100% - 14px);
 }
 
 .site-header.is-scrolled .wordmark .logo-full {
@@ -1216,7 +1223,8 @@ h3 {
   }
 
   .site-header.is-scrolled .wordmark {
-    width: 72px;
+    width: 116px;
+    height: 48px;
   }
 
   .wordmark img {
