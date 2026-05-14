@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+.env
+.env.*
+site-home.html
+site-fleet.html
+site-packages.html
+idt-services-overview.jpg
+qa/

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I Do Transportation | Wedding & Event Transportation in Montgomery, TX</title>
+    <meta
+      name="description"
+      content="A modern front-end mockup for I Do Transportation, a family-owned Montgomery, Texas group transportation company serving weddings, airports, venues, and events."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "I Do Transportation Services LLC",
+        "url": "https://idotransportation.com/",
+        "telephone": "+1-936-672-2097",
+        "areaServed": [
+          "Montgomery County",
+          "Conroe",
+          "The Woodlands",
+          "Plantersville",
+          "Willis",
+          "Magnolia",
+          "Houston"
+        ],
+        "description": "Family-owned group transportation for weddings, airports, venues, and special events based in Montgomery, Texas."
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="I Do Transportation home">
+        <img src="assets/img/logo.png" alt="I Do Transportation" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#packages">Packages</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#venues">Venues</a>
+        <a href="#process">Plan</a>
+        <a class="nav-cta" href="#reserve">Reserve</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-slides" aria-hidden="true">
+          <img class="is-active" src="assets/img/venue-olde-dobbin.jpg" alt="" />
+          <img src="assets/img/venue-iron-manor.jpg" alt="" />
+          <img src="assets/img/venue-big-sky-barn.jpg" alt="" />
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Montgomery County wedding and event transportation</p>
+            <h1 id="hero-title">A calm, polished ride plan for the moments that cannot run late.</h1>
+            <p class="hero-intro">
+              I Do Transportation creates safe, reliable group transportation for weddings,
+              airports, venues, and private events across Montgomery County, Houston, and the
+              surrounding area.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#reserve">Plan my ride</a>
+              <a class="button button-secondary" href="#packages">Explore packages</a>
+            </div>
+          </div>
+
+          <aside class="itinerary-panel" aria-label="Wedding transportation itinerary preview">
+            <p class="panel-kicker">Wedding day flow</p>
+            <ol>
+              <li>
+                <span>01</span>
+                <strong>Hotel pickups</strong>
+                <p>Guests arrive together, without parking stress.</p>
+              </li>
+              <li>
+                <span>02</span>
+                <strong>Ceremony shuttle</strong>
+                <p>Coordinated trips around venue timelines.</p>
+              </li>
+              <li>
+                <span>03</span>
+                <strong>Reception return</strong>
+                <p>Late-night rides home handled cleanly.</p>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Company highlights">
+        <div>
+          <strong>10+ years</strong>
+          <span>Family-owned local service</span>
+        </div>
+        <div>
+          <strong>12-15</strong>
+          <span>Passenger luxury vehicle options</span>
+        </div>
+        <div>
+          <strong>IAH + Hobby</strong>
+          <span>Airport transportation</span>
+        </div>
+        <div class="badge-pair" aria-label="Wedding recognition badges">
+          <img src="assets/img/badge-knot-2023.png" alt="The Knot Best of Weddings 2023 badge" />
+          <img src="assets/img/badge-knot-2024.png" alt="The Knot Best of Weddings 2024 badge" />
+        </div>
+      </section>
+
+      <section class="section intro-grid" aria-labelledby="intro-title">
+        <div class="section-heading">
+          <p class="eyebrow">The upgrade</p>
+          <h2 id="intro-title">From a service list to a planning experience.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            The new site should help a bride, planner, parent, or travel group understand the
+            whole picture fast: what can be booked, where the fleet goes, how planning works,
+            and what to do next.
+          </p>
+          <p>
+            This mockup keeps the current business facts, but gives them a more modern funnel:
+            cinematic venue context, simple package routing, trust proof, and a quick quote
+            form that can later connect to AI itinerary planning.
+          </p>
+        </div>
+      </section>
+
+      <section class="section packages" id="packages" aria-labelledby="packages-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Packages</p>
+          <h2 id="packages-title">Choose the ride plan that matches the day.</h2>
+          <p>
+            Each package is framed by the outcome customers actually want: fewer moving parts,
+            safer guests, and a timeline that still feels graceful.
+          </p>
+        </div>
+
+        <div class="package-grid" data-package-grid>
+          <button class="package-card is-selected" type="button" data-package="wedding">
+            <img src="assets/img/wedding-transportation.jpg" alt="Wedding transportation van by a venue" />
+            <span>Wedding Packages</span>
+            <h3>Guest shuttles, wedding party moves, and send-off rides.</h3>
+            <p>Best for ceremony-to-reception logistics, rehearsal dinners, and late-night returns.</p>
+          </button>
+          <button class="package-card" type="button" data-package="airport">
+            <img src="assets/img/airport-transfer.jpg" alt="Passenger airplane taking off" />
+            <span>Airport Transportation</span>
+            <h3>Reliable pickup and drop-off for IAH and Hobby.</h3>
+            <p>Best for one-way, round-trip, and group travel tied to a wedding weekend.</p>
+          </button>
+          <button class="package-card" type="button" data-package="events">
+            <img src="assets/img/luminaire-event.jpg" alt="Vehicle in front of The Luminaire venue" />
+            <span>Parties + Events</span>
+            <h3>Concerts, games, birthdays, rodeos, prom, and quinceaneras.</h3>
+            <p>Best for groups that want the night to feel organized from first pickup to final stop.</p>
+          </button>
+        </div>
+
+        <div class="concierge-snapshot" data-ai-hook="package-summary">
+          <div>
+            <p class="panel-kicker">Concierge snapshot</p>
+            <h3 data-summary-title>Wedding Packages</h3>
+            <p data-summary-copy>
+              Build a transportation timeline around hotel blocks, venue arrivals, ceremony windows,
+              photo moves, reception returns, and a private getaway ride.
+            </p>
+          </div>
+          <ul data-summary-list>
+            <li>Guest shuttle loops</li>
+            <li>Wedding party movement</li>
+            <li>Late-night return schedule</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fleet-section" id="fleet" aria-labelledby="fleet-title">
+        <div class="section-heading wide">
+          <p class="eyebrow">Fleet</p>
+          <h2 id="fleet-title">Vehicles that feel right pulling up to the venue.</h2>
+          <p>
+            Spacious group transportation with luxury details available across the fleet,
+            including options with bars, special lighting, privacy screens, and SUV getaway rides.
+          </p>
+        </div>
+
+        <div class="fleet-gallery">
+          <figure class="feature-photo">
+            <img src="assets/img/fleet-3518.jpg" alt="I Do Transportation luxury van exterior" />
+            <figcaption>
+              <strong>Guest-ready capacity</strong>
+              <span>12 to 15 passenger luxury vehicle options</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/fleet-3530.jpg" alt="Luxury shuttle bus seating interior" />
+            <figcaption>Comfortable interiors</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/fleet-3459.jpg" alt="Luxury transportation seating with party lighting" />
+            <figcaption>Event-ready details</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/fleet-3442.jpg" alt="Black I Do Transportation vehicle exterior" />
+            <figcaption>Private getaway options</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="venue-band" id="venues" aria-labelledby="venues-title">
+        <div class="venue-copy">
+          <p class="eyebrow">Venue fluency</p>
+          <h2 id="venues-title">Built around the places couples already love.</h2>
+          <p>
+            The current site lists dozens of venues. The redesigned experience turns that list into
+            confidence: I Do Transportation already understands the rhythm of local wedding spaces.
+          </p>
+        </div>
+        <div class="venue-list" aria-label="Sample venues served">
+          <span>Olde Dobbin Station</span>
+          <span>Iron Manor</span>
+          <span>The Farmhouse</span>
+          <span>Pine Lake Ranch</span>
+          <span>Arrowhead Hill</span>
+          <span>Addison Woods</span>
+          <span>The Peach Orchard</span>
+          <span>The Springs Lake Conroe</span>
+          <span>Venue 311</span>
+          <span>The Luminaire</span>
+          <span>Madera Estates</span>
+          <span>Big Sky Barn</span>
+          <span>Sandlewood Manor</span>
+          <span>The Meekermark</span>
+          <span>The Blue Magnolia</span>
+        </div>
+      </section>
+
+      <section class="section process" id="process" aria-labelledby="process-title">
+        <div class="section-heading">
+          <p class="eyebrow">Planning flow</p>
+          <h2 id="process-title">A simpler way to get from inquiry to itinerary.</h2>
+        </div>
+        <div class="process-steps">
+          <article>
+            <span>01</span>
+            <h3>Share the route</h3>
+            <p>Event type, date, venue, pickup points, airports, and guest count.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Match the vehicle</h3>
+            <p>Capacity, comfort needs, luggage, stops, and timeline requirements.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Approve the plan</h3>
+            <p>A clear transportation schedule the couple, planner, or host can trust.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote-section" id="reserve" aria-labelledby="reserve-title">
+        <div class="quote-intro">
+          <p class="eyebrow">Reserve</p>
+          <h2 id="reserve-title">Turn the first inquiry into a clear plan.</h2>
+          <p>
+            The form is intentionally short for the first step. The future backend can enrich the
+            request, generate an itinerary draft, and route the lead without making visitors work
+            harder up front.
+          </p>
+          <div class="contact-card">
+            <strong>Prefer direct contact?</strong>
+            <a href="tel:+19366722097">936-672-2097</a>
+            <a href="mailto:info@idotransportation.com">info@idotransportation.com</a>
+          </div>
+        </div>
+
+        <form class="quote-form" data-ai-hook="lead-intake" data-quote-form>
+          <div class="form-row">
+            <label for="event-type">Event type</label>
+            <select id="event-type" name="eventType">
+              <option>Wedding</option>
+              <option>Airport transfer</option>
+              <option>Concert or game</option>
+              <option>Private celebration</option>
+              <option>Corporate or group event</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="date">Event date</label>
+            <input id="date" name="date" type="date" />
+          </div>
+          <div class="form-row">
+            <label for="guests">Estimated passengers</label>
+            <input id="guests" name="guests" type="number" min="1" max="60" value="14" />
+          </div>
+          <div class="form-row">
+            <label for="venue">Venue or destination</label>
+            <input id="venue" name="venue" type="text" autocomplete="organization" placeholder="Iron Manor, IAH, hotel block..." />
+          </div>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-row full">
+            <label for="notes">What should we know?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Pickup points, timeline, airport, hotel block, or special requests"></textarea>
+          </div>
+          <div class="form-footer">
+            <p>Prototype form. No submission is sent yet.</p>
+            <button class="button button-primary" type="submit">Request my ride plan</button>
+          </div>
+          <p class="form-success" data-form-success hidden>
+            Your mock inquiry is ready. In production, this would create the lead and trigger the planning workflow.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <img src="assets/img/logo.png" alt="I Do Transportation" />
+        <p>Safe, reliable group transportation based in Montgomery, Texas.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#packages">Packages</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#venues">Venues</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
