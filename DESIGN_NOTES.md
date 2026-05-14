@@ -23,23 +23,23 @@ Main constraints:
 
 ## New Funnel
 
-1. Hero: immediate wedding/event promise with venue slideshow and primary CTA
-2. Proof: years in business, capacity, airport coverage, award badges
-3. Reframe: explain the planning experience
-4. Packages: route visitors by intent
-5. Fleet: show the vehicle experience clearly
-6. Venues: convert local venue knowledge into trust
-7. Process: explain the booking path
-8. Reserve: short lead form with direct contact backup
+1. Hero: full-screen cinematic venue scene with custom wordmark and primary CTA
+2. Service ribbon: fast scan of the transportation moments and event types
+3. Reframe: explain transportation as part of the event design
+4. Packages: route visitors by intent with large image-led panels
+5. Fleet: show capacity and vehicle atmosphere through editorial gallery composition
+6. Venues: convert local venue knowledge into visual trust proof
+7. Timeline: explain the booking path as a production plan
+8. Reserve: short concierge-style lead form with direct contact backup
 
 ## Visual Direction
 
-DFII estimate: **13 / 15**
+DFII estimate: **14 / 15**
 
-- Aesthetic impact: 4
+- Aesthetic impact: 5
 - Context fit: 5
 - Implementation feasibility: 5
 - Performance safety: 4
 - Consistency risk: 5
 
-The site avoids a generic transportation template by making the venue-and-itinerary story the main design anchor, not just placing vehicle photos in ordinary cards.
+The site avoids a generic transportation template by making venue arrival, guest movement, and itinerary planning the main design anchor rather than simply placing vehicle photos into ordinary service cards. The old raster logo is removed from the header in favor of a cleaner text mark, and champagne/sage are used as major visual surfaces instead of tiny accents.

@@ -4,13 +4,16 @@ Static front-end mockup for modernizing [idotransportation.com](https://idotrans
 
 ## What This Is
 
-This is a dependency-free HTML/CSS/JS prototype. Open `index.html` directly in a browser to view it.
+This is a dependency-free HTML/CSS/JS prototype. Open `index.html` directly in a browser to view it, or serve the folder locally.
 
-The mockup reframes the current site into a clearer booking funnel:
+The mockup reframes the current site into a cinematic booking funnel:
 
-- Cinematic venue slideshow above the fold
-- Package cards for weddings, airports, and events
-- Fleet gallery using the client's current vehicle photos
+- Full-screen venue hero with subtle slideshow motion
+- Custom text wordmark instead of the old raster logo
+- Champagne and sage color fields used as major visual anchors
+- Moving service marquee and cinematic arrival ribbon
+- Large image-led package panels for weddings, airports, and events
+- Editorial fleet gallery using the client's current vehicle photos
 - Venue familiarity section for wedding confidence
 - Short quote form ready for future backend and AI planning work
 
@@ -29,7 +32,7 @@ The markup includes `data-ai-hook` attributes where future AI/backend features c
 
 ## Design Direction
 
-**Refined wedding-concierge.** The visual system uses venue photography, editorial serif headlines, crisp black/ivory structure, champagne accents, and restrained motion. The goal is to feel premium and organized without losing the family-owned local tone.
+**Cinematic wedding concierge.** The visual system uses venue photography, oversized editorial serif headlines, crisp black/ivory structure, bold champagne and sage surfaces, and restrained motion. The goal is to feel premium, current, and organized without losing the family-owned local tone.
 
 ## Notes
 
