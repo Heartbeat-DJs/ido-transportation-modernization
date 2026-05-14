@@ -864,7 +864,8 @@ h3 {
   min-height: 820px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(32px, 6vw, 78px);
+  column-gap: clamp(32px, 6vw, 78px);
+  row-gap: clamp(30px, 4vw, 54px);
   align-items: center;
   padding: 92px max(20px, calc((100vw - var(--content)) / 2));
   overflow: hidden;
@@ -908,14 +909,13 @@ h3 {
 }
 
 .venue-cloud {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  left: max(20px, calc((100vw - var(--content)) / 2));
-  right: max(20px, calc((100vw - var(--content)) / 2));
-  bottom: 56px;
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 2px;
 }
 
 .venue-cloud span {
@@ -1198,7 +1198,7 @@ h3 {
   }
 
   .venue-scene {
-    padding-bottom: 210px;
+    padding-bottom: 92px;
   }
 
   .site-footer nav {
@@ -1360,17 +1360,11 @@ h3 {
   .venue-scene {
     min-height: auto;
     padding-top: 64px;
-    padding-bottom: 260px;
+    padding-bottom: 76px;
   }
 
   .venue-scene-image {
     min-height: 340px;
-  }
-
-  .venue-cloud {
-    left: 14px;
-    right: 14px;
-    bottom: 38px;
   }
 
   .timeline-grid article {
