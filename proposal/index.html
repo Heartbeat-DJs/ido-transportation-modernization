@@ -74,6 +74,45 @@
             letter-spacing: -0.5px;
         }
 
+        .proposal-headline {
+            display: grid;
+            justify-items: center;
+            gap: 6px;
+        }
+
+        .headline-client {
+            display: inline-block;
+            padding: 4px 18px 7px;
+            border: 1px solid rgba(212, 175, 55, 0.34);
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--accent-gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            line-height: 1.2;
+            text-transform: uppercase;
+            box-shadow: 0 0 28px rgba(212, 175, 55, 0.08);
+        }
+
+        .headline-era {
+            display: block;
+            color: rgba(243, 244, 246, 0.88);
+            font-size: clamp(1.65rem, 4vw, 3.15rem);
+            line-height: 1.08;
+            white-space: nowrap;
+        }
+
+        .headline-brand {
+            display: block;
+            color: var(--accent-gold);
+            font-size: clamp(2.9rem, 7vw, 4.6rem);
+            line-height: 1;
+            white-space: nowrap;
+            text-shadow: 0 0 32px rgba(212, 175, 55, 0.16);
+        }
+
         .subtitle {
             color: var(--text-muted);
             font-size: 1.25rem;
@@ -357,6 +396,16 @@
                 grid-template-columns: 1fr;
             }
             h1 { font-size: 2.5rem; }
+            .headline-client {
+                font-size: 0.82rem;
+                letter-spacing: 0.14em;
+            }
+            .headline-era {
+                font-size: clamp(1.18rem, 6vw, 1.65rem);
+            }
+            .headline-brand {
+                font-size: clamp(1.78rem, 8.9vw, 3.2rem);
+            }
             .price { font-size: 3.5rem; }
             .container { padding: 40px 20px; }
         }
@@ -369,7 +418,11 @@
         <!-- Hero Section -->
         <header>
             <div class="logo">SANO Solutions Proposal</div>
-            <h1>Chase, welcome to the new era of<br><span style="color: var(--accent-gold);">I Do Transportation.</span></h1>
+            <h1 class="proposal-headline">
+                <span class="headline-client">Chase,</span>
+                <span class="headline-era">Welcome to the new era of</span>
+                <span class="headline-brand">I Do Transportation.</span>
+            </h1>
             <p class="subtitle">A high-effort website mockup and Phase 1 AI Concierge direction designed to make I Do Transportation feel premium, easier to manage, and easier for qualified couples to trust.</p>
         </header>
 
