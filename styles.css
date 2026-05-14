@@ -151,9 +151,15 @@ h3 {
 }
 
 .site-header.is-scrolled .wordmark {
-  width: clamp(92px, 9.2vw, 142px);
+  width: clamp(58px, 4.8vw, 76px);
   aspect-ratio: 2.75;
-  filter: drop-shadow(0 14px 24px rgba(13, 14, 10, 0.18));
+  margin-top: -14px;
+  border: 1px solid rgba(255, 250, 241, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 16, 13, 0.7);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 42px rgba(13, 14, 10, 0.22);
+  filter: drop-shadow(0 10px 18px rgba(13, 14, 10, 0.16));
 }
 
 .wordmark {
@@ -169,7 +175,7 @@ h3 {
   filter:
     drop-shadow(0 0 12px rgba(255, 250, 241, 0.28))
     drop-shadow(0 18px 32px rgba(13, 14, 10, 0.28));
-  transition: filter 220ms ease, transform 220ms ease, width 220ms ease, aspect-ratio 220ms ease;
+  transition: filter 220ms ease, transform 220ms ease, width 220ms ease, aspect-ratio 220ms ease, margin-top 220ms ease;
 }
 
 .wordmark:hover {
@@ -1210,7 +1216,7 @@ h3 {
   }
 
   .site-header.is-scrolled .wordmark {
-    width: 118px;
+    width: 72px;
   }
 
   .wordmark img {
