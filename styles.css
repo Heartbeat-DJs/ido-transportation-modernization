@@ -1310,11 +1310,43 @@ h3 {
   }
 
   .arrival-ribbon {
-    grid-template-columns: 1fr;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    padding: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(246, 240, 223, 0.26);
+    border-radius: 999px;
+    background: rgba(15, 16, 13, 0.72);
+    box-shadow: 0 16px 42px rgba(13, 14, 10, 0.22);
   }
 
   .arrival-ribbon span {
-    min-height: 42px;
+    min-width: 0;
+    min-height: 40px;
+    padding: 0 4px;
+    border-right: 0;
+    border-radius: 999px;
+    font-size: 0;
+    line-height: 1;
+    overflow: hidden;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .arrival-ribbon span::after {
+    content: attr(data-short);
+    font-size: clamp(0.56rem, 2.15vw, 0.68rem);
+    line-height: 1.08;
+  }
+
+  @media (max-width: 360px) {
+    .arrival-ribbon span::after {
+      content: attr(data-tiny);
+      font-size: 0.54rem;
+    }
   }
 
   .experience,

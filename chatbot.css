@@ -282,15 +282,18 @@
 @media (max-width: 560px) {
   .chatbot-shell {
     right: 14px;
-    bottom: 14px;
+    bottom: 76px;
   }
 
   .chat-launcher {
+    width: 58px;
     min-height: 58px;
-    padding-right: 14px;
+    justify-content: center;
+    gap: 0;
+    padding: 6px;
   }
 
-  .chat-launcher-copy small {
+  .chat-launcher-copy {
     display: none;
   }
 
