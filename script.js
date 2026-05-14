@@ -169,6 +169,9 @@ function updateContactLink(selector, value, kind) {
 
 async function applyCMSContent() {
   try {
+    const isStaticPreview = window.location.protocol === "file:" || window.location.hostname.endsWith("github.io");
+    if (isStaticPreview) return;
+
     const res = await fetch("/api/content");
     if (!res.ok) return;
 
