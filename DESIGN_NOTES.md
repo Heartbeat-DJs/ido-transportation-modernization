@@ -42,4 +42,4 @@ DFII estimate: **14 / 15**
 - Performance safety: 4
 - Consistency risk: 5
 
-The site avoids a generic transportation template by making venue arrival, guest movement, and itinerary planning the main design anchor rather than simply placing vehicle photos into ordinary service cards. The old raster logo is removed from the header in favor of a cleaner text mark, and champagne/sage are used as major visual surfaces instead of tiny accents.
+The site avoids a generic transportation template by making venue arrival, guest movement, and itinerary planning the main design anchor rather than simply placing vehicle photos into ordinary service cards. The old raster logo is removed from the header in favor of a cleaner text mark, and the bright yellow accent has been replaced with a quieter champagne/taupe system paired with olive sage.

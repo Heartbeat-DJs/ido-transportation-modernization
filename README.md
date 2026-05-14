@@ -10,7 +10,7 @@ The mockup reframes the current site into a cinematic booking funnel:
 
 - Full-screen venue hero with subtle slideshow motion
 - Custom text wordmark instead of the old raster logo
-- Champagne and sage color fields used as major visual anchors
+- Muted champagne/taupe and olive sage color fields used as major visual anchors
 - Moving service marquee and cinematic arrival ribbon
 - Large image-led package panels for weddings, airports, and events
 - Editorial fleet gallery using the client's current vehicle photos
@@ -32,7 +32,7 @@ The markup includes `data-ai-hook` attributes where future AI/backend features c
 
 ## Design Direction
 
-**Cinematic wedding concierge.** The visual system uses venue photography, oversized editorial serif headlines, crisp black/ivory structure, bold champagne and sage surfaces, and restrained motion. The goal is to feel premium, current, and organized without losing the family-owned local tone.
+**Cinematic wedding concierge.** The visual system uses venue photography, oversized editorial serif headlines, crisp black/ivory structure, muted champagne/taupe and olive sage surfaces, and restrained motion. The goal is to feel premium, current, and organized without losing the family-owned local tone.
 
 ## Notes
 
