@@ -4,10 +4,11 @@
   --ink: #0f100d;
   --ink-soft: #1b1e17;
   --ivory: #f4efe5;
-  --ivory-deep: #e5dac8;
-  --champagne: #c1aa85;
-  --champagne-deep: #846f54;
-  --sage: #929a80;
+  --ivory-deep: #dfd2bf;
+  --champagne: #b79b7d;
+  --champagne-deep: #786150;
+  --champagne-soft: #c9b29a;
+  --sage: #8f997d;
   --sage-dark: #555f4c;
   --sage-ink: #20271c;
   --white: #fffaf1;
@@ -31,7 +32,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(13, 14, 10, 0.045) 1px, transparent 1px) 0 0 / 92px 92px,
+    linear-gradient(135deg, rgba(13, 14, 10, 0.026) 0 1px, transparent 1px 18px) 0 0 / 26px 26px,
+    linear-gradient(45deg, rgba(255, 250, 241, 0.24) 0 1px, transparent 1px 18px) 0 0 / 30px 30px,
+    radial-gradient(circle at 16% 10%, rgba(143, 153, 125, 0.12), transparent 34%),
     linear-gradient(var(--ivory), var(--ivory-deep));
   font-family: "Manrope", Verdana, sans-serif;
   font-size: 16px;
@@ -45,6 +48,10 @@ body.nav-open {
 img {
   display: block;
   max-width: 100%;
+}
+
+main > section:not(.hero) {
+  scroll-margin-top: 112px;
 }
 
 a {
@@ -90,7 +97,7 @@ h1 {
   max-width: 880px;
   margin-bottom: 24px;
   color: var(--white);
-  font-size: clamp(4rem, 6.4vw, 7.4rem);
+  font-size: clamp(4rem, 5.9vw, 6.85rem);
   letter-spacing: 0;
 }
 
@@ -132,7 +139,7 @@ h3 {
   z-index: 50;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 28px;
+  gap: clamp(16px, 2.6vw, 28px);
   align-items: center;
   color: var(--white);
   transition: color 220ms ease, top 220ms ease;
@@ -144,36 +151,36 @@ h3 {
 }
 
 .site-header.is-scrolled .wordmark {
-  padding: 9px 13px;
-  border-radius: 999px;
-  background: rgba(244, 239, 229, 0.86);
-  box-shadow: 0 18px 50px rgba(13, 14, 10, 0.12);
+  background: rgba(244, 239, 229, 0.9);
+  box-shadow: 0 18px 50px rgba(13, 14, 10, 0.14);
 }
 
 .wordmark {
-  display: inline-grid;
-  width: fit-content;
+  display: inline-flex;
+  width: clamp(154px, 14vw, 218px);
   min-height: 54px;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(246, 240, 223, 0.34);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(244, 239, 229, 0.82);
+  box-shadow: 0 18px 56px rgba(13, 14, 10, 0.18);
+  backdrop-filter: blur(18px);
   text-decoration: none;
-  text-transform: uppercase;
+  transition: background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
-.wordmark span {
-  display: block;
-  color: inherit;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 0.82;
+.wordmark:hover {
+  transform: translateY(-1px);
 }
 
-.wordmark small {
-  color: #d8c8ad;
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
+.wordmark img {
+  width: 100%;
+  max-height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(13, 14, 10, 0.18));
 }
 
 .site-nav {
@@ -209,7 +216,7 @@ h3 {
 }
 
 .site-nav a:hover {
-  background: rgba(193, 170, 133, 0.18);
+  background: rgba(183, 155, 125, 0.18);
 }
 
 .site-nav .nav-cta {
@@ -219,7 +226,7 @@ h3 {
 }
 
 .site-nav .nav-cta:hover {
-  background: #d4bea0;
+  background: var(--champagne-soft);
   transform: translateY(-1px);
 }
 
@@ -280,7 +287,7 @@ h3 {
   height: 1px;
   background: var(--champagne);
   opacity: 0.72;
-  box-shadow: 0 0 0 1px rgba(193, 170, 133, 0.16);
+  box-shadow: 0 0 0 1px rgba(183, 155, 125, 0.16);
   animation: lineDrift 6s ease-in-out infinite;
 }
 
@@ -297,7 +304,7 @@ h3 {
   object-fit: cover;
   opacity: 0;
   transform: scale(1.04);
-  filter: saturate(0.96) contrast(1.08);
+  filter: saturate(0.82) contrast(1.12) brightness(0.9);
   transition: opacity 1100ms ease, transform 7800ms ease;
 }
 
@@ -309,8 +316,9 @@ h3 {
 .hero-wash {
   z-index: 1;
   background:
-    radial-gradient(circle at 78% 24%, rgba(193, 170, 133, 0.18), transparent 32%),
-    linear-gradient(90deg, rgba(15, 16, 13, 0.92), rgba(15, 16, 13, 0.56) 44%, rgba(15, 16, 13, 0.18)),
+    radial-gradient(circle at 73% 22%, rgba(143, 153, 125, 0.24), transparent 34%),
+    radial-gradient(circle at 24% 52%, rgba(183, 155, 125, 0.18), transparent 30%),
+    linear-gradient(90deg, rgba(15, 16, 13, 0.9), rgba(15, 16, 13, 0.55) 46%, rgba(15, 16, 13, 0.2)),
     linear-gradient(0deg, rgba(15, 16, 13, 0.9), rgba(15, 16, 13, 0.06) 50%);
 }
 
@@ -320,9 +328,9 @@ h3 {
   width: min(var(--content), calc(100% - 40px));
   min-height: 100svh;
   display: grid;
-  align-content: end;
+  align-content: center;
   margin: 0 auto;
-  padding: 146px 0 102px;
+  padding: 132px 0 124px;
 }
 
 .scene-label {
@@ -333,11 +341,12 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: clamp(34px, 7vw, 96px);
-  align-items: end;
+  align-items: center;
 }
 
 .hero-copy {
-  max-width: 900px;
+  max-width: 830px;
+  padding-left: clamp(0px, 3vw, 52px);
 }
 
 .eyebrow,
@@ -388,7 +397,7 @@ h3 {
 }
 
 .button-primary:hover {
-  background: #d4bea0;
+  background: var(--champagne-soft);
 }
 
 .button-ghost {
@@ -638,8 +647,9 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(0deg, rgba(13, 14, 10, 0.95), rgba(13, 14, 10, 0.18) 58%),
-    linear-gradient(90deg, rgba(135, 152, 106, 0.24), transparent);
+    linear-gradient(0deg, rgba(13, 14, 10, 0.95), rgba(13, 14, 10, 0.2) 58%),
+    linear-gradient(90deg, rgba(143, 153, 125, 0.28), transparent),
+    radial-gradient(circle at 78% 14%, rgba(183, 155, 125, 0.22), transparent 30%);
 }
 
 .package-feature img {
@@ -649,6 +659,7 @@ h3 {
   height: 100%;
   object-fit: cover;
   opacity: 0.78;
+  filter: saturate(0.74) contrast(1.12) brightness(0.9);
   transition: transform 460ms ease, opacity 220ms ease;
 }
 
@@ -662,6 +673,7 @@ h3 {
 .package-feature:hover img,
 .package-feature.is-selected img {
   opacity: 0.95;
+  filter: saturate(0.82) contrast(1.15) brightness(0.94);
   transform: scale(1.05);
 }
 
@@ -786,6 +798,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.78) contrast(1.12) brightness(0.92);
   transition: transform 520ms ease;
 }
 
@@ -1041,9 +1054,9 @@ h3 {
 .form-success {
   margin: 8px 0 0;
   padding: 14px;
-  border: 1px solid rgba(193, 170, 133, 0.5);
+  border: 1px solid rgba(183, 155, 125, 0.5);
   border-radius: 6px;
-  background: rgba(193, 170, 133, 0.14);
+  background: rgba(183, 155, 125, 0.14);
   color: var(--white);
   font-weight: 800;
 }
@@ -1174,8 +1187,14 @@ h3 {
     right: 14px;
   }
 
-  .wordmark span {
-    font-size: 1.8rem;
+  .wordmark {
+    width: 148px;
+    min-height: 50px;
+    padding: 7px 10px;
+  }
+
+  .wordmark img {
+    max-height: 38px;
   }
 
   .nav-toggle {

@@ -23,7 +23,7 @@ Main constraints:
 
 ## New Funnel
 
-1. Hero: full-screen cinematic venue scene with custom wordmark and primary CTA
+1. Hero: full-screen cinematic venue scene with the client-supplied wedding logo and primary CTA
 2. Service ribbon: fast scan of the transportation moments and event types
 3. Reframe: explain transportation as part of the event design
 4. Packages: route visitors by intent with large image-led panels
@@ -42,4 +42,4 @@ DFII estimate: **14 / 15**
 - Performance safety: 4
 - Consistency risk: 5
 
-The site avoids a generic transportation template by making venue arrival, guest movement, and itinerary planning the main design anchor rather than simply placing vehicle photos into ordinary service cards. The old raster logo is removed from the header in favor of a cleaner text mark, and the bright yellow accent has been replaced with a quieter champagne/taupe system paired with olive sage.
+The site avoids a generic transportation template by making venue arrival, guest movement, and itinerary planning the main design anchor rather than simply placing vehicle photos into ordinary service cards. The new client-supplied logo is cropped into a restrained header badge, the page texture has been softened into a tailored-suit crosshatch, and the bright yellow accent has been replaced with a quieter champagne/taupe system paired with olive sage.

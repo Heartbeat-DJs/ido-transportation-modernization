@@ -18,10 +18,10 @@ const packageSummaries = {
     items: ["Guest shuttle loops", "Wedding party movement", "Late-night return schedule"],
   },
   airport: {
-    title: "Airport Transfer",
+    title: "Airport Arrivals",
     copy:
-      "Coordinate one-way or round-trip airport service for IAH and Hobby with pickup windows that align with wedding-weekend or group travel plans.",
-    items: ["IAH and Hobby routes", "Round-trip planning", "Luggage-aware vehicle matching"],
+      "Coordinate IAH and Hobby arrivals for family, wedding parties, and out-of-town guests with pickup windows that align with the full wedding-weekend plan.",
+    items: ["IAH and Hobby arrivals", "Family and wedding-party pickups", "Room for luggage and formalwear"],
   },
   events: {
     title: "Night Out",
