@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I Do Transportation | Website Modernization Proposal</title>
+    <meta
+      name="description"
+      content="Client-facing proposal for the I Do Transportation website redesign, admin workflow, AI concierge direction, and next-step questionnaire."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #11130f;
+        --deep: #0a0b09;
+        --ivory: #f4efe5;
+        --paper: #fffaf1;
+        --champagne: #b79b7d;
+        --sage: #8f997d;
+        --line: rgba(17, 19, 15, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(135deg, rgba(17, 19, 15, 0.03) 0 1px, transparent 1px 18px) 0 0 / 26px 26px,
+          linear-gradient(45deg, rgba(255, 250, 241, 0.38) 0 1px, transparent 1px 18px) 0 0 / 30px 30px,
+          linear-gradient(var(--ivory), #dfd2bf);
+        color: var(--ink);
+        font-family: "Manrope", Arial, sans-serif;
+        line-height: 1.62;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .proposal {
+        width: min(1120px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 48px 0 72px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 48px;
+        align-items: end;
+        min-height: 620px;
+        padding: 54px;
+        border-radius: 10px;
+        background:
+          linear-gradient(90deg, rgba(10, 11, 9, 0.94), rgba(10, 11, 9, 0.58)),
+          url("../assets/img/venue-olde-dobbin.jpg") center / cover;
+        color: var(--paper);
+        box-shadow: 0 34px 90px rgba(17, 19, 15, 0.28);
+      }
+
+      .hero img {
+        width: 250px;
+        max-width: 100%;
+        margin-bottom: 46px;
+      }
+
+      .eyebrow,
+      .kicker {
+        margin: 0 0 14px;
+        color: var(--champagne);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        line-height: 0.98;
+      }
+
+      h1 {
+        max-width: 720px;
+        margin-bottom: 22px;
+        font-size: clamp(3.2rem, 7vw, 6.4rem);
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(2.25rem, 4.8vw, 4.35rem);
+      }
+
+      h3 {
+        margin-bottom: 12px;
+        font-size: 1.45rem;
+      }
+
+      .hero p:not(.eyebrow) {
+        max-width: 660px;
+        margin-bottom: 0;
+        color: rgba(255, 250, 241, 0.82);
+        font-size: 1.08rem;
+      }
+
+      .status-card {
+        padding: 26px;
+        border: 1px solid rgba(255, 250, 241, 0.2);
+        border-radius: 8px;
+        background: rgba(10, 11, 9, 0.62);
+        backdrop-filter: blur(18px);
+      }
+
+      .status-card strong {
+        display: block;
+        color: var(--champagne);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 4rem;
+        line-height: 0.9;
+      }
+
+      .status-card span {
+        display: block;
+        margin-bottom: 18px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: var(--champagne);
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        border-color: rgba(255, 250, 241, 0.32);
+        background: rgba(255, 250, 241, 0.08);
+        color: var(--paper);
+      }
+
+      .section {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: 54px;
+        padding: 84px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section.full {
+        display: block;
+      }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .panel,
+      .questionnaire {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 250, 241, 0.54);
+        box-shadow: 0 18px 48px rgba(17, 19, 15, 0.08);
+      }
+
+      .panel {
+        padding: 24px;
+      }
+
+      .panel span {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--champagne);
+        font-weight: 900;
+      }
+
+      .dark-band {
+        margin: 46px 0 0;
+        padding: 40px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--deep), #20271c);
+        color: var(--paper);
+      }
+
+      .dark-band p {
+        color: rgba(255, 250, 241, 0.76);
+      }
+
+      ul,
+      ol {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .questionnaire {
+        padding: 30px;
+      }
+
+      .questionnaire ol {
+        columns: 2;
+        column-gap: 44px;
+      }
+
+      .fine-print {
+        margin-top: 26px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: rgba(17, 19, 15, 0.68);
+        font-size: 0.94rem;
+      }
+
+      .footer-note {
+        padding: 42px 0 0;
+        color: rgba(17, 19, 15, 0.7);
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .section {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 34px 24px;
+        }
+
+        .panel-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .questionnaire ol {
+          columns: 1;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .proposal {
+          width: 100%;
+          padding: 0;
+        }
+
+        .hero,
+        .section,
+        .dark-band,
+        .panel,
+        .questionnaire {
+          break-inside: avoid;
+          box-shadow: none;
+        }
+
+        .button {
+          border: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="proposal">
+      <section class="hero">
+        <div>
+          <img src="../assets/img/ido-logo-new-white.png" alt="I Do Transportation Services" />
+          <p class="eyebrow">Website modernization proposal for Chase</p>
+          <h1>A cinematic wedding transportation experience.</h1>
+          <p>
+            This proposal outlines the mockup, admin workflow, AI concierge direction, and next steps
+            for turning I Do Transportation into a modern, easier-to-manage digital presence.
+          </p>
+          <div class="link-row">
+            <a class="button" href="https://heartbeat-djs.github.io/ido-transportation-modernization/">View website</a>
+            <a class="button secondary" href="I-Do-Transportation-Proposal-Chase.pdf">Download PDF</a>
+          </div>
+        </div>
+        <aside class="status-card">
+          <strong>70%</strong>
+          <span>Mockup maturity</span>
+          <p>
+            The direction, visual system, and core page structure are in place. The remaining work is
+            final copy, final photos, backend hardening, client decisions, and production launch setup.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div>
+          <p class="kicker">What we focused on</p>
+          <h2>Modern, wedding-first, and built around trust.</h2>
+        </div>
+        <div>
+          <p>
+            The redesign moves away from a basic transportation page and into a refined wedding
+            concierge experience. The site now leads with cinematic venue imagery, elegant typography,
+            clearer packages, local venue familiarity, and a stronger sense of calm planning.
+          </p>
+          <div class="panel-grid">
+            <article class="panel">
+              <span>01</span>
+              <h3>Wedding feel</h3>
+              <p>Language, images, and layout now make wedding weekends the first impression.</p>
+            </article>
+            <article class="panel">
+              <span>02</span>
+              <h3>Clear decisions</h3>
+              <p>Packages are framed around real client needs: wedding weekends, arrivals, and nights out.</p>
+            </article>
+            <article class="panel">
+              <span>03</span>
+              <h3>Premium polish</h3>
+              <p>Color, motion, spacing, and photo treatment are designed to feel current and high-end.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div>
+          <p class="kicker">Admin command center</p>
+          <h2>Less waiting on a webpage provider.</h2>
+        </div>
+        <div>
+          <p>
+            The admin side is designed to give I Do Transportation more control over the site without
+            waiting on a third party for every text or photo change. The demo includes a secure login,
+            editable content fields, media controls, and a visual editor path for direct on-page changes.
+          </p>
+          <ul>
+            <li>Update key homepage copy and brand colors.</li>
+            <li>Swap hero, package, and fleet images.</li>
+            <li>Preview the site through the admin dashboard.</li>
+            <li>Use a floating visual editor for direct page-level edits.</li>
+          </ul>
+          <div class="dark-band">
+            <h3>Important demo note</h3>
+            <p>
+              The admin workflow is a functional prototype connected to a local demo backend for review.
+              Production would include final hosting, role/password hardening, backups, deployment rules,
+              analytics, and a safer content publishing workflow.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div>
+          <p class="kicker">AI concierge direction</p>
+          <h2>Helpful first response, not overpromised automation.</h2>
+        </div>
+        <div>
+          <p>
+            The AI chatbot direction is focused on practical support: answering common questions,
+            qualifying quote requests, deflecting pricing until the route is understood, and preparing
+            a clean handoff for the human team. More advanced voice receptionists and text-back systems
+            can be treated as future Phase 2 upgrades.
+          </p>
+          <ul>
+            <li>FAQ and quote-start assistant for wedding and event transportation.</li>
+            <li>Phone-number capture for fast follow-up.</li>
+            <li>Pricing deflection so the business keeps control of custom quotes.</li>
+            <li>Future-ready structure for SMS or Make.com style workflow handoff.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section full">
+        <p class="kicker">Next step questionnaire</p>
+        <h2>If you want to move forward.</h2>
+        <div class="questionnaire">
+          <p>
+            To begin the full build, we would collect a 50% deposit and then use this questionnaire
+            to finish the site around your exact preferences, packages, policies, photos, and launch goals.
+          </p>
+          <ol>
+            <li>What are the top three services you want visitors to book?</li>
+            <li>Which wedding venues should be featured first?</li>
+            <li>What are your exact service areas and airport coverage?</li>
+            <li>What vehicle types, capacities, and amenities should be listed?</li>
+            <li>Which photos are final, and which should be replaced or upgraded?</li>
+            <li>What tone should the copy use: luxury, friendly, family-owned, or direct?</li>
+            <li>What phone number and email should receive leads?</li>
+            <li>Do you want form submissions, texts, emails, or all three?</li>
+            <li>Which current website problems are most frustrating?</li>
+            <li>Who should have admin access after launch?</li>
+            <li>Do you want the chatbot included in Phase 1 or saved for Phase 2?</li>
+            <li>What launch timeline feels realistic?</li>
+          </ol>
+          <p class="fine-print">
+            This is a complete mockup and working demo direction, not the finished production website.
+            It is intentionally still in your hands. We can keep the current direction, simplify it,
+            make it more formal, make it more family-owned, or take it in another direction before launch.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div>
+          <p class="kicker">Share links</p>
+          <h2>Review the experience.</h2>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Public website mockup:
+              <a href="https://heartbeat-djs.github.io/ido-transportation-modernization/">heartbeat-djs.github.io/ido-transportation-modernization</a>
+            </li>
+            <li>
+              Temporary full-stack preview:
+              <a href="https://searched-goals-left-forum.trycloudflare.com/preview/">searched-goals-left-forum.trycloudflare.com/preview</a>
+            </li>
+            <li>
+              Temporary admin login:
+              <a href="https://searched-goals-left-forum.trycloudflare.com/admin/login.html">searched-goals-left-forum.trycloudflare.com/admin/login.html</a>
+            </li>
+          </ul>
+          <p class="fine-print">
+            Temporary demo links depend on the local demo server and tunnel being online. Permanent
+            production links would be created during the final hosting and launch phase.
+          </p>
+        </div>
+      </section>
+
+      <p class="footer-note">
+        Prepared for Chase and I Do Transportation. Built as a high-effort prototype to show the
+        design direction, operating model, and client-control workflow before committing to the final build.
+      </p>
+    </main>
+  </body>
+</html>

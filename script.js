@@ -116,3 +116,86 @@ if (quoteForm && successMessage) {
     successMessage.focus?.();
   });
 }
+
+const cmsTextMappings = [
+  { key: "hero-eyebrow", selector: ".hero-copy .eyebrow" },
+  { key: "hero-headline", selector: "#hero-title" },
+  { key: "hero-subtext", selector: ".hero-copy p:not(.eyebrow)" },
+  { key: "years-in-business", selector: ".card-number" },
+  { key: "director-card-sub", selector: ".director-card p" },
+  { key: "director-card-strong", selector: ".director-card strong" },
+  { key: "experience-headline", selector: "#experience-title" },
+  { key: "experience-subtext", selector: ".experience-copy p:not(.eyebrow)" },
+  { key: "experience-card-1-title", selector: ".experience-stack article:nth-child(1) h3" },
+  { key: "experience-card-1-sub", selector: ".experience-stack article:nth-child(1) p" },
+  { key: "experience-card-2-title", selector: ".experience-stack article:nth-child(2) h3" },
+  { key: "experience-card-2-sub", selector: ".experience-stack article:nth-child(2) p" },
+  { key: "experience-card-3-title", selector: ".experience-stack article:nth-child(3) h3" },
+  { key: "experience-card-3-sub", selector: ".experience-stack article:nth-child(3) p" },
+  { key: "packages-title", selector: "#packages-title" },
+  { key: "package-btn-1-title", selector: ".package-stage button:nth-child(1) strong" },
+  { key: "package-btn-1-sub", selector: ".package-stage button:nth-child(1) small" },
+  { key: "package-btn-2-title", selector: ".package-stage button:nth-child(2) strong" },
+  { key: "package-btn-2-sub", selector: ".package-stage button:nth-child(2) small" },
+  { key: "package-btn-3-title", selector: ".package-stage button:nth-child(3) strong" },
+  { key: "package-btn-3-sub", selector: ".package-stage button:nth-child(3) small" },
+  { key: "fleet-headline", selector: "#fleet-title" },
+  { key: "fleet-subtext", selector: ".fleet-copy p:not(.eyebrow)" },
+  { key: "venue-headline", selector: "#venues-title" },
+  { key: "venue-subtext", selector: ".venue-scene-content p:not(.eyebrow)" },
+  { key: "quote-headline", selector: "#reserve-title" },
+  { key: "quote-subtext", selector: ".quote-copy p:not(.eyebrow)" },
+];
+
+const cmsImageMappings = [
+  { key: "hero-slide-1", selector: ".hero-slides img:nth-child(1)" },
+  { key: "hero-slide-2", selector: ".hero-slides img:nth-child(2)" },
+  { key: "hero-slide-3", selector: ".hero-slides img:nth-child(3)" },
+  { key: "package-img-1", selector: ".package-stage button:nth-child(1) img" },
+  { key: "package-img-2", selector: ".package-stage button:nth-child(2) img" },
+  { key: "package-img-3", selector: ".package-stage button:nth-child(3) img" },
+  { key: "fleet-image-1", selector: ".fleet-frame:nth-child(1) img" },
+  { key: "fleet-image-2", selector: ".fleet-frame:nth-child(2) img" },
+  { key: "fleet-image-3", selector: ".fleet-frame:nth-child(3) img" },
+  { key: "fleet-image-4", selector: ".fleet-frame:nth-child(4) img" },
+];
+
+function updateContactLink(selector, value, kind) {
+  const el = document.querySelector(selector);
+  if (!el || !value) return;
+  el.textContent = value;
+  el.href = kind === "phone" ? `tel:${value.replace(/[^\d+]/g, "")}` : `mailto:${value}`;
+}
+
+async function applyCMSContent() {
+  try {
+    const res = await fetch("/api/content");
+    if (!res.ok) return;
+
+    const content = await res.json();
+    const root = document.documentElement;
+
+    if (content["accent-1-color"]) root.style.setProperty("--champagne", content["accent-1-color"]);
+    if (content["accent-2-color"]) root.style.setProperty("--sage", content["accent-2-color"]);
+    if (content["dark-color"]) root.style.setProperty("--ink", content["dark-color"]);
+    if (content["light-color"]) root.style.setProperty("--ivory", content["light-color"]);
+    if (content["white-color"]) root.style.setProperty("--white", content["white-color"]);
+
+    cmsTextMappings.forEach(({ key, selector }) => {
+      const el = document.querySelector(selector);
+      if (el && content[key]) el.textContent = content[key];
+    });
+
+    cmsImageMappings.forEach(({ key, selector }) => {
+      const el = document.querySelector(selector);
+      if (el && content[key]) el.setAttribute("src", content[key]);
+    });
+
+    updateContactLink('.contact-line a[href^="tel"]', content["contact-phone"], "phone");
+    updateContactLink('.contact-line a[href^="mailto"]', content["contact-email"], "email");
+  } catch (error) {
+    // Static previews do not have the CMS API; the site should continue normally.
+  }
+}
+
+applyCMSContent();
